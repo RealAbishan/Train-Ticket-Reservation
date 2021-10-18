@@ -2,10 +2,10 @@
 #  port: ${SERVER_PORT}
 #  servlet:
 #    context-path: /api/spt-svc
-spring:
-  data:
-    mongodb:
-      url: ${DB_URL}
+#spring:
+#  data:
+#    mongodb:
+#      url: ${DB_URL}
 #springfox:
 #  documentation:
 #    swagger:
