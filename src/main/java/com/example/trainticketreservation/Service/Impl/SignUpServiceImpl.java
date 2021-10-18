@@ -4,33 +4,43 @@ import com.example.trainticketreservation.Dtos.UserDto;
 import com.example.trainticketreservation.Model.User;
 import com.example.trainticketreservation.Repository.SignUpRepository;
 import com.example.trainticketreservation.Service.SignUpService;
-import com.example.trainticketreservation.Utills.RandomString;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
+
+@AllArgsConstructor
 @Service
 public class SignUpServiceImpl implements SignUpService {
 
-    private static MongoTemplate datastore;
-
+    @Autowired
+    MongoTemplate mongoTemplate;
     @Autowired
     private SignUpRepository signUpRepository;
 
-    private RandomString random;
-
     @Override
-    public Object signUp(UserDto userDto) {
-        String userId = random.nextString();
+    public Object addPartner(UserDto userDto) {
         User user = User.builder()
                 .firstName(userDto.getFirstName())
                 .lastName(userDto.getLastName())
-                .userName(userDto.getUserName())
-                .gender(userDto.getGender())
                 .age(userDto.getAge())
+                .gender(userDto.getGender())
+                .userName(userDto.getUserName())
                 .mobileNumber(userDto.getMobileNumber())
                 .build();
-        User save = (User) signUpRepository.save(user);
+
+        User save = signUpRepository.save(user);
         return userDto;
+    }
+
+    @Override
+    public Object getUsers(UserDto userDto) {
+        return signUpRepository.findAll();
+    }
+
+    @Override
+    public Object getUserById(String name) {
+        return signUpRepository.findById(name);
     }
 }

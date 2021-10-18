@@ -5,7 +5,7 @@
 spring:
   data:
     mongodb:
-      uri: ${DB_URL}
+      url: ${DB_URL}
 #springfox:
 #  documentation:
 #    swagger:
@@ -13,7 +13,7 @@ spring:
 #        path: /swagger.json
 
 env:
-#  namespace: ${ENVIRONMENT}
+  namespace: ${ENVIRONMENT}
   db:
     mongo:
       url: ${DB_URL}
@@ -48,5 +48,3 @@ env:
 #      publicKey: ${KEY_CLOAK_SA_PEM}
 #  azure:
 #    blob:
-#      connection: DefaultEndpointsProtocol=https;AccountName=saivstagingrgdiag;AccountKey=l1P0Kwg5pKx1ETdbxXzqrqWE/ewK0kxCc6ZT0HDBIUn5pIqJBFBP0dJ47zDa/gZB9mt2+5wDEs2+oX8chvViUw==;EndpointSuffix=core.windows.net
-#      bucket: ${AZURE_BLOB_CONTAINER_NAME}

@@ -7,13 +7,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
 
 @Builder
-@Document(collection = "user")
+@Document("user")
 public class User {
 
     @Id
     private String id;
-    @Indexed(unique = true,direction = IndexDirection.ASCENDING, background = true)
-
     private String firstName;
     private String lastName;
     private String gender;
