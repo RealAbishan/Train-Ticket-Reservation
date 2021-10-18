@@ -1,0 +1,50 @@
+#server:
+#  port: ${SERVER_PORT}
+#  servlet:
+#    context-path: /api/spt-svc
+#spring:
+#  data:
+#    mongodb:
+#      url: ${DB_URL}
+#springfox:
+#  documentation:
+#    swagger:
+#      v2:
+#        path: /swagger.json
+
+env:
+  namespace: ${ENVIRONMENT}
+  db:
+    mongo:
+      url: ${DB_URL}
+      dbName: ${DB_NAME}
+#  service:
+#    group-svc: ${GROUP_SERVICE}
+#    user-mgt: ${USER_SERVICE}
+#    config:
+#      vault_saiv:
+#        enabled: true
+#      vault_sa:
+#        enabled: true
+#      insolar_utils:
+#        enabled: true
+#      ecdsa:
+#        enabled: true
+#  vault:
+#    saiv:
+#      url: ${VAULT_SAIV_URL}
+#      token: ${VAULT_SAIV_TOKEN}
+#    sa:
+#      url: ${VAULT_SA_URL}
+#      token: ${VAULT_SA_TOKEN}
+#  ins:
+#    url: ${INSOLAR_HOST}
+#    username: ${INSOLAR_USERNAME}
+#    password: ${INSOLAR_PASSWORD}
+#  keyCloak:
+#    saiv:
+#      publicKey: ${KEY_CLOAK_SAIV_PEM}
+#    sa:
+#      publicKey: ${KEY_CLOAK_SA_PEM}
+#  azure:
+#    blob:
