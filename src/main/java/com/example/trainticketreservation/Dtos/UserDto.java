@@ -1,30 +1,17 @@
-package com.example.trainticketreservation.Model;
+package com.example.trainticketreservation.Dtos;
 
-import lombok.Builder;
-import org.springframework.data.mongodb.core.index.IndexDirection;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.annotation.Id;
 
-@Builder
-@Document(collection = "user")
-public class User {
-
-    @Id
-    private String id;
-    @Indexed(unique = true,direction = IndexDirection.ASCENDING, background = true)
+public class UserDto {
 
     private String firstName;
     private String lastName;
     private String gender;
     private String age;
     private String userName;
-    private Address address;
+    private String address;
     private String mobileNumber;
 
-
-    public User(String id, String firstName, String lastName, String gender, String age, String userName,Address address,String mobileNumber) {
-        this.id = id;
+    public UserDto(String firstName, String lastName, String gender, String age, String userName, String address, String mobileNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -34,15 +21,7 @@ public class User {
         this.mobileNumber = mobileNumber;
     }
 
-    public User() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public UserDto() {
     }
 
     public String getFirstName() {
@@ -85,11 +64,11 @@ public class User {
         this.userName = userName;
     }
 
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
